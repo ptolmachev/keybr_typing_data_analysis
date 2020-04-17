@@ -97,28 +97,28 @@ def plot_char_stats(data, window):
     ax[0].bar(np.arange(len(y)), y,  yerr=z, align='center', alpha=0.5, ecolor='black',
               capsize=10, label='Time to type, sec')
     ax[0].set_xticks(np.arange(0, len(chars) + 1, 1.0))
-    ax[0].set_xticklabels(list(map(chars_lbls.__getitem__, x)))
+    ax[0].set_xticklabels(list(map(chars_lbls.__getitem__, x)), fontsize = 16)
     ax[0].set_ylabel('Time to type, sec', fontsize = 16)
 
     y, x, z = zip(*sorted(zip(char_mrs, np.arange(len(chars)), char_mrs_std)))
     ax[3].bar(np.arange(len(y)), (np.array(y)).astype(int),  yerr=np.array(z), color = 'violet', align='center', alpha=0.5, ecolor='black',
               capsize=10, label='Miss ratio')
     ax[3].set_xticks(np.arange(0, len(chars) + 1, 1.0))
-    ax[3].set_xticklabels(list(map(chars_lbls.__getitem__, x)))
+    ax[3].set_xticklabels(list(map(chars_lbls.__getitem__, x)), fontsize = 16)
     ax[3].set_ylabel('Miss ratio, %', fontsize = 16)
 
     _, y, x, z = zip(*sorted(zip(char_mrs, char_hits, np.arange(len(chars)), char_hits_std)))
     ax[1].bar(np.arange(len(y)), y,  yerr=z, color = 'green', align='center', alpha=0.5, ecolor='black',
               capsize=10, label='Num hits')
     ax[1].set_xticks(np.arange(0, len(chars) + 1, 1.0))
-    ax[1].set_xticklabels(list(map(chars_lbls.__getitem__, x)))
+    ax[1].set_xticklabels(list(map(chars_lbls.__getitem__, x)), fontsize = 16)
     ax[1].set_ylabel('Num hits', fontsize = 16)
 
     _, y, x, z = zip(*sorted(zip(char_mrs, char_miss, np.arange(len(chars)), char_miss_std)))
     ax[2].bar(np.arange(len(y)), y,  yerr=z, color = 'red', align='center', alpha=0.5, ecolor='black',
               capsize=10, label='Num misses')
     ax[2].set_xticks(np.arange(0, len(chars) + 1, 1.0))
-    ax[2].set_xticklabels(list(map(chars_lbls.__getitem__, x)))
+    ax[2].set_xticklabels(list(map(chars_lbls.__getitem__, x)), fontsize = 16)
     ax[2].set_ylabel('Num misses', fontsize = 16)
 
     for i in range(len(ax)):
